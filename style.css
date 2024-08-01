@@ -1,0 +1,296 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html , body{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(50, 48, 48, 0.5), rgba(49, 46, 46, 0.5)), url("/Anime\ Castle\ Background\ Outside\ Night.jpeg");
+    background-size: cover;
+}
+
+#main{
+    position: relative;
+}
+#heading{
+    height: 15vh;
+    width: 100%;
+    background-image: url(/rose.jpg);
+    background-position: center;
+    position: relative;
+}
+
+#head{
+  
+
+  color: white;
+  text-align: center;
+  padding-top: 1%;
+  font-size: 300%;
+}
+
+#head span{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#angel{
+    display: flex;
+    height: 35vh;
+    width: 100%;
+    
+    position: relative;
+}
+
+#left{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+
+    
+  
+}
+
+#angel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#left,
+#right {
+    width: 20%; /* Adjust the image width as needed */
+    height: 35vh; /* Maintain aspect ratio */
+}
+
+.write {
+    text-align: center;
+    flex-grow: 1; /* Allow the text to take available space */
+    font-family: "Love Light", cursive;
+    font-weight: 700;
+    font-style: normal;
+  font-size: 400%;
+  color: white;
+
+}
+#memo{
+    color: white;
+}
+#letter{
+    font-size: 200%;
+    background-color: #ff4040; /* Red wine color */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size:50px;
+    border-radius: 6px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+    font-weight: 20%;
+
+}
+#letter:hover{
+    background-color: #d63031; 
+}
+#letter:active{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+#right{
+    margin-left: 10%;
+}
+#left{
+    margin-right: 10%;
+}
+#loveletter{
+    height: 5vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#letter{
+    border-radius: 20px;
+    font-family: "Love Light", cursive;
+    font-weight: 600;
+    padding: 1%;
+    
+}
+
+#memories{
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Love Light", cursive;
+  font-weight: 700;
+  font-style: normal;
+    font-size: 200%;
+}
+
+#slider{
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+#slidetrack{
+    display: flex;
+    width: calc(250px * 30);
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-7500px);
+    }
+}
+#slide{
+    height: 200px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    perspective: 100px;
+}
+
+.pic{
+    width: 100%;
+    transition: transform 1%;
+}
+.pic:hover{
+    transform: translateZ(20px)
+}
+#slider::before,
+#slider::after{
+    background: linear-gradient(to right, rgba(255,255,255,1)0%,
+    rgba(255,255,255,0)100%);
+    content:'';
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index: 2;
+}
+
+#slider::before{
+    left:0;
+    top:0;
+}
+#slider::after{
+    right:0;
+    top:0;
+    transform: rotateZ(180deg);
+}
+#audio {
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   
+    margin-top: 2%;
+}
+#player{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+#big {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000;
+}
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+
+.heart:before,
+.heart:after {
+    position: absolute;
+    content: "";
+    left: 100px;
+    top: 0;
+    width: 100px;
+    height: 160px;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    z-index: 1;
+}
+
+.heart::before {
+    animation: heartbeat 0.7s infinite linear, glow 0.7s infinite alternate;
+    background: linear-gradient(180deg, #ff0000, #eb0303);
+}
+
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+    background: linear-gradient(75deg, #ff0000, #db0303);
+    animation: heartbeat2 0.7s infinite linear, glow 0.7s infinite alternate;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1) rotate(-45deg);
+
+    }
+
+    50% {
+        transform: scale(1.1)rotate(-45deg);
+    }
+
+    100% {
+        transform: scale(1)rotate(-45deg);
+    }
+}
+
+@keyframes heartbeat2 {
+    0% {
+        transform: scale(1) rotate(45deg);
+
+    }
+
+    50% {
+        transform: scale(1.1)rotate(45deg);
+    }
+
+    100% {
+        transform: scale(1)rotate(45deg);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px #ff0000;
+    }
+
+    50% {
+        box-shadow: 0 0 40px #ff0000;
+    }
+
+    100% {
+        box-shadow: 0 0 20px #ff0000;
+    }
+}
